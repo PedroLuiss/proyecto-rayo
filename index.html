@@ -2,10 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Pure CSS Rain</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Hola</h1>
+    <div class="rain"></div>
+    <div class=""></div>
 </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        setTimeout(function() {
+            var images = ["lightining.png", "rayo2.png", "rayo3.jpg"];
+            var randomIndex = Math.floor(Math.random() * images.length);
+            var newImage = images[randomIndex];
+
+            const rainDiv = document.querySelector('.rain');
+            const beforeStyle = window.getComputedStyle(rainDiv, '::before');
+            const beforeContent = beforeStyle.getPropertyValue('content');
+
+            console.log(beforeStyle);
+            // document.querySelector(".rain::before").style.backgroundImage = "url(" + newImage + ")";
+        }, 1000); // Cambia la imagen después de 1 segundo
+    });
+</script>
 </html>
